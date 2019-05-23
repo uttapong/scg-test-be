@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+    lemp-php:
+        build: ./
+        ports:
+            - "80:80"
+        container_name: lemp-php
+        volumes:
+            - ../zend/:/var/www/html/:rw
+            - ./apache/log:/var/log/apache2:rw
+            - ./apache/sites-enabled:/etc/apache2/sites-enabled/
+        networks:
+            - lemp-network
+
+networks:
+    lemp-network:
+        driver: bridge
