@@ -12,6 +12,12 @@ services:
             - ./apache/sites-enabled:/etc/apache2/sites-enabled/
         networks:
             - lemp-network
+    redis:
+        image: redis
+        ports:
+            - "6379:6379"
+        networks:
+            - lemp-network
 
 networks:
     lemp-network:

@@ -13,4 +13,15 @@
 
 return [
     // ...
+    'redis_cache' => [
+        'adapter' => [
+            'name' => 'redis',
+            'options' => [
+                'server' => [
+                    'host' => '127.0.0.1',
+                    'port' => 6379,
+                ]
+            ]
+        ],
+    ]
 ];
